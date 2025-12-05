@@ -3,7 +3,7 @@ from pyscript import document
 # Dictionary of club information
 clubs_data = {
     "glee": {
-        "name": "GLEE Club",
+        "name": "GLEE CLUB",
         "description": "A choral group that performs at school events.",
         "meeting_time": "Monday 03:00-05:00 PM",
         "location": "High School Music Room",
