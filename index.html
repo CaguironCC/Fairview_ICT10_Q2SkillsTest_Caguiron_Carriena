@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>School Club Information</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+        h1 {
+            color: #3498db;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        select:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            text-align: left;
+        }
+        .instruction {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        #message {
+            line-height: 1.5;
+            white-space: pre-wrap;
+            font-family: Arial, sans-serif;
+        }
+        .club-info {
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        .select-container {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>School Club Information</h1>
+        
+        <div class="input-group">
+           <label for="clubs" >Select a club:</label>
+           <select id="clubs" name="clubs" class="form-select-custom">
+                <option value=""> Select a Club </option>
+                <option value="glee">Glee Club</option>
+                <option value="dance">Dance Club</option>
+                <option value="math">Math Club</option>
+                <option value="communications">Communications Arts Club</option>
+                <option value="social">Social Studies Club</option>
+                <option value="volleyball">Volleyball Varsity</option>
+            </select>
+        </div>
+        <button id="get-info-btn" py-click="display_club_info">Get Information</button>
+        
+        <div class="result">
+            <div id="message" class="club-info">
+                <strong>Select a club to see information here...</strong>
+            </div>
+        </div>
+        
+        <p class="instruction">Select a club and click "Get Information" to see club details.</p>
+    </div>
+
+    <py-config>
+        packages = []
+        [[fetch]]
+        files = ["main.py"]
+    </py-config>
+    <py-script src="main.py"></py-script>
+</body>
+</html>
